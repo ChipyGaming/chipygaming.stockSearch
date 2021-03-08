@@ -20,3 +20,4 @@ chrome.runtime.onMessage.addListener(function(request, sender) {
   }
   
   window.onload = onWindowLoad;
+  //testing
