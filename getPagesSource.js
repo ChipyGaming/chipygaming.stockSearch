@@ -26,8 +26,9 @@ function DOMtoString(document_root) {
     
     var n = html.search("$");
     var r = html.match(/\$(([a-zA-z]|)*[a-zA-z]+)/g); //regex to filter through html for any words with $words
-    
-    return r;
+    const x = html.match(/\$(([a-zA-z]|)*[a-zA-z]+)/g);
+    let uniqueChars = [...new Set(r)];
+    return uniqueChars;
 }
 
 
