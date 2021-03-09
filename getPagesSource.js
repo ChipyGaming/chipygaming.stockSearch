@@ -24,7 +24,7 @@ function DOMtoString(document_root) {
     }
     //return html; returns html of the page we are viewing
     
-    var endDoc = '';
+    var endDoc;
     var n = html.search("$");
     //var r = html.match(/\$(([a-zA-z]|)*[a-zA-z]+)/g); //regex to filter through html for any words with $words
     var r2 = html.match(/\$([a-zA-Z]+)/g);
