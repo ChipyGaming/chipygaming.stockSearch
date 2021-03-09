@@ -24,11 +24,20 @@ function DOMtoString(document_root) {
     }
     //return html; returns html of the page we are viewing
     
+    var endDoc = '';
     var n = html.search("$");
-    var r = html.match(/\$(([a-zA-z]|)*[a-zA-z]+)/g); //regex to filter through html for any words with $words
-    const x = html.match(/\$(([a-zA-z]|)*[a-zA-z]+)/g);
-    let uniqueChars = [...new Set(r)];
-    return uniqueChars;
+    //var r = html.match(/\$(([a-zA-z]|)*[a-zA-z]+)/g); //regex to filter through html for any words with $words
+    var r2 = html.match(/\$([a-zA-Z]+)/g);
+    for(i = 0; i < r2.length; ++i){
+
+    r2[i] = r2[i].replace('$','');
+    }//r2 = GME,GME,GME,GME,GME
+    //let uniqueChars = [...new Set(r2)];
+    for (j = 0; j < r2.length; ++j){
+        document.write("<p>Link: " + r2[j].link("https://finance.yahoo.com/quote/" + r2[j]) + "</p>");
+    }
+    return document;
+
 }
 
 
